@@ -7,7 +7,10 @@ use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *      normalizationContext={"groups"={"article:read"}},
+ *      denormalizationContext={"groups"={"article:write"}}
+ * )
  * @ORM\Entity(repositoryClass=ProductRepository::class)
  */
 class Product
@@ -16,21 +19,29 @@ class Product
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * 
+     * @Groups("article:read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"article:read", "article:write"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="integer")
+     * 
+     * @Groups({"article:read", "article:write"})
      */
     private $price;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
+     * @Groups({"article:read", "article:write"})
      */
     private $description;
 

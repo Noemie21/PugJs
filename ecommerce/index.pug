@@ -1,0 +1,196 @@
+mixin item(i , title)
+    div.item 
+        i(class=i)
+        p=title 
+
+mixin categorie(i, name, add)
+    div.categorie 
+        i(class=i)
+        div 
+            p=name
+            p=add
+
+mixin filter(name)
+    div.filter 
+        i(class="far fa-square")
+        p=name 
+
+mixin dropdown(button)
+    div.dropdown 
+        button=button
+        i(class="fas fa-chevron-down")
+        div.dropdown-content
+            a(href="#") link 1
+            a(href="#") link 2
+            a(href="#") link 3
+
+mixin related(text)
+    div.related
+        p= text
+
+mixin stars()
+    div.stars
+        i(class="fas fa-star")
+        i(class="fas fa-star")
+        i(class="fas fa-star")
+        i(class="fas fa-star")
+        i(class="fas fa-star")
+
+mixin product(image, content, price, watchers, shipping, mark)
+    div.product 
+        img(src=image, alt="")
+        div 
+            p.content=content
+            p.price= price
+            div.info
+                p.watchers= watchers 
+                p.shipping= shipping 
+            div.mark
+                +stars()
+                p=mark 
+
+
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="assets/css/style.css")
+        script(defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js")
+        title Document
+    body 
+        header 
+            div.left 
+                div 
+                    p S
+                h1 Shopka
+                button Sell on Shopka 
+                button Register
+            div.center 
+                div.search
+                    div 
+                        i(class="fas fa-search")
+                        p useless items on white background
+                    i(class="fas fa-times")
+                button Consumer Electronics
+            div.right 
+                button.signin Sign In 
+                button.mycart My cart 
+                div 
+                    img(src="assets/img/Edward Powlowski.png", alt="")
+        
+        div.navmenu 
+            +item('fas fa-tshirt', 'Clothing & Shoes')
+            +item('fas fa-film', 'Entertainment')
+            +item('fas fa-music', 'Music')
+            +item('fas fa-dumbbell', 'Sport & Lifestyle')
+            +item('fas fa-bone', 'Pets')
+            +item('fas fa-utensils', 'Kitchen Accessories')
+            +item('fas fa-binoculars', 'Travel Equipment')
+            +item('fas fa-seedling', 'Growing & Garden')
+            +item('fas fa-bolt', 'Electrical Tools')
+            +item('fas fa-baby-carriage', 'Mother Cares')
+            +item('fas fa-radiation', 'Toys & Entertainment')
+            +item('fas fa-spider', 'Vintage')
+
+        div.container
+            div.leftcontainer 
+                div.departments
+                    i(class="fas fa-wifi")
+                    h2 Departments
+                
+                div.menu 
+                    +categorie("fas fa-chevron-right", "All Categories", "Ecommerce patterns")
+                    +categorie("fas fa-chevron-down", "Electronics", "")
+                    +categorie("fas fa-chevron-down", "Cell Phones & Smartphones", "")
+                    +categorie("", "Cell Phones & Accessories", "")
+                    +categorie("", "Cell Phones Gadgets", "")
+                    +categorie("", "Applications", "")
+                    +categorie("", "Smart Watches", "")
+                    div.button 
+                        button Show More
+                        i(class="fas fa-chevron-down")
+                    +categorie("fas fa-chevron-right", "Business & Industrial", "")
+                    +categorie("fas fa-chevron-right", "Computers", "Tablets & Networking")
+                    +categorie("fas fa-chevron-right", "Consumer Electroinics", "")
+                    +categorie("fas fa-chevron-right", "Home & Garden", "")
+                    +categorie("fas fa-chevron-right", "Collectibles", "")
+                    div.button 
+                        button Expend 
+
+                div.collapsed-filter
+
+                div.filters 
+                    div
+                        p Expanded filters
+                        i(class="fas fa-chevron-up")
+                    +filter("Recommended")
+                    +filter("Recently Added")
+                    +filter("Expiring Soon")
+                    +filter("Most Rated")
+                    +filter("Price: Low -> High")
+                    +filter("Price: High -> Low")
+
+                div.filters 
+                    div 
+                        p Year of manufacturing
+                        i(class="fas fa-chevron-up")
+                    +filter("1954")
+                    +filter("1955")
+                    +filter("1956")
+                    +filter("1957")
+                    +filter("1958")
+                    +filter("1959")
+                    +filter("1960")
+                    +filter("1961")
+                    +filter("1962-2020")
+
+
+
+            div.rightcontainer 
+                div.top 
+                    div 
+                        +dropdown("Sort By")
+                        +dropdown("Condition")
+                        +dropdown("Delivery Options")
+                    
+                    div.groups
+                        div.group
+                            div 
+                                p Show All
+                            div 
+                                p Auction 
+                            div 
+                                p Buy Now
+                        div.group 
+                            div 
+                                i(class="fas fa-list")
+                            div 
+                                i(class="fas fa-th-large")
+                div.second 
+                    p Related 
+                    +related("wordlwide shipping")
+                    +related("under $50")
+                    +related("kitten")
+                    +related("plastic plugs")
+                    +related("pucker shoes")
+                    +related("vintage typewriter")
+
+                div.products
+                    +product('assets/img/Image-11.png', 'Vintage Typewriter to post awesome stories about UI design and webdev.', '$49.50', '', 'Eligible for Shipping To Mars or somewhere else', '4.05')
+                    +product('assets/img/Image-10.png', 'Lee Pucker design. Leather botinki for handsome designers. Free shipping.', '$13.95', '1258 bids, 359 watchers', '$5.95 for shipping', '4.56')
+                    +product('assets/img/Image-9.png', 'Timesaving kitten to save months on development. Playful, cute, cheap!', '$128.99', '', 'Eligible for nothing :(', '4.05')
+                    +product('assets/img/Image-8.png', 'Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat!', '$12,48', 'Wordwide shitting available', 'Buyers protection possible!', '4.99')
+                    +product('assets/img/Image-7.png', 'Creativity stimulating lotion. Drink every morning to generate better ideas!', '$12,48', 'Wordwide shitting available', 'Buyers protection possible!',  '4.99')
+                    +product('assets/img/Image-6.png', 'Prototyping items to create a lot if useless things...', '$128.99', '', 'Showcasing onHovered state', '4.87')
+                    +product('assets/img/Image-5.png', 'John Von Ebalkin SPRING ', '$13.95', '1258 bids, 359 watchers', '$5.95 for shipping', '4.56')
+                    +product('assets/img/Image-4.png', 'Envelope, Stripes, Pencil and etc. Purchase this kit today and feel OKAY', '$9.50', '', 'Eligible for Shipping To Mars or somewhere else', '4.77')
+                    +product('assets/img/Image-3.png', 'Professional teadrinking set for every designer and developer', '$128.99', '', 'Eligible for nothing :(', '4.05')
+                    +product('assets/img/Image-2.png', 'One string Bonsai description', '$11.68', 'Wordwide shitting available', 'Buyers protection possible!', '4.99')
+                    +product('assets/img/Image-1.png', 'Simply best item in town to shine bright with your Nine Inch Nails', '$1.25', '', 'Eligible for Shipping To Mars or somewhere else', '4.77')
+                    +product('assets/img/Image.png', 'KISTOCHKI & KRASIBO. Top cosmetics brand from Chelyabinsk is here!', '$23.25', '1258 bids, 359 watchers', '$5.95 for shipping', '4.56')
+
+
+
