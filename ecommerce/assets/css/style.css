@@ -188,7 +188,20 @@ h1 {
     color: #787885;
     padding: 0 10px 0 10px;
 }
+
+.collapsed-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 2px rgba(58, 58, 68, 0.24), 0px 2px 4px rgba(90, 91, 106, 0.24);
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 1px 20px 1px 10px;
+    font-size: 14px;
+}
 .filters {
+    margin-top: 20px;
     background-color: #F7F7FA;
     font-size: 14px;
 }
@@ -285,11 +298,11 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-radius: 4px;
     align-items: center;
+    background-color: #EBF2FF;
+    border-radius: 4px;
 }
 .group div {
-    background-color: #EBF2FF;
     color: #5A5B6A;
     width: 70px;
     padding: 0 2px 0 2px;
@@ -297,12 +310,19 @@ h1 {
     margin-right: auto;
     align-self: center;
     align-items: center;
+    text-align: center;
+
 
 }
 .group div:nth-child(2) {
     background-color: white;
     color: #2264D1;
     box-shadow: 0px 1px 2px rgba(27, 78, 163, 0.24), 0px 2px 4px rgba(41, 121, 255, 0.24);
+    border-radius: 4px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 .second {
     display: flex;
@@ -340,7 +360,15 @@ h1 {
     flex-direction: column;
     align-items: center;
     width: 180px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
+.product:hover {
+    box-shadow: 0px 2px 4px rgba(59, 69, 123, 0.2), 0px 4px 8px rgba(92, 107, 192, 0.2);
+    border-radius: 8px;
+    z-index: 5;
+}
+
 .content {
     height: 75px;
 }
@@ -357,4 +385,27 @@ h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.border {
+    box-shadow: 0px 2px 4px rgba(59, 69, 123, 0.2), 0px 4px 8px rgba(92, 107, 192, 0.2);
+    border-radius: 8px;
+    z-index: 5;
+}
+.deal .price:after {
+    content: "Cool Deal !";
+    color: #C23564;
+    background-color: #FDEDF2;
+    font-size: 12px;
+    padding: 4px 6px 4px 6px;
+    border-radius: 4px;
+    margin-left: 50px;
+}
+.discount .price:after {
+    content: "50% OFF";
+    color: #37833B;
+    background-color: #ECF7ED;
+    font-size: 12px;
+    padding: 4px 6px 4px 6px;
+    border-radius: 4px;
+    margin-left: 30px;
 }

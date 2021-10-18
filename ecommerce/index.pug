@@ -37,7 +37,7 @@ mixin stars()
         i(class="fas fa-star")
 
 mixin product(image, content, price, watchers, shipping, mark)
-    div.product 
+    .product 
         img(src=image, alt="")
         div 
             p.content=content
@@ -121,6 +121,8 @@ html(lang="en")
                         button Expend 
 
                 div.collapsed-filter
+                    p Collapsed filters
+                    i(class="fas fa-chevron-down")
 
                 div.filters 
                     div
@@ -182,14 +184,17 @@ html(lang="en")
                     +product('assets/img/Image-11.png', 'Vintage Typewriter to post awesome stories about UI design and webdev.', '$49.50', '', 'Eligible for Shipping To Mars or somewhere else', '4.05')
                     +product('assets/img/Image-10.png', 'Lee Pucker design. Leather botinki for handsome designers. Free shipping.', '$13.95', '1258 bids, 359 watchers', '$5.95 for shipping', '4.56')
                     +product('assets/img/Image-9.png', 'Timesaving kitten to save months on development. Playful, cute, cheap!', '$128.99', '', 'Eligible for nothing :(', '4.05')
-                    +product('assets/img/Image-8.png', 'Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat!', '$12,48', 'Wordwide shitting available', 'Buyers protection possible!', '4.99')
+                    .discount
+                        +product('assets/img/Image-8.png', 'Plastic useless plugs and tubes for high-fidelity prototyping. Fit & Eat!', '$12,48', 'Wordwide shitting available', 'Buyers protection possible!', '4.99')
                     +product('assets/img/Image-7.png', 'Creativity stimulating lotion. Drink every morning to generate better ideas!', '$12,48', 'Wordwide shitting available', 'Buyers protection possible!',  '4.99')
-                    +product('assets/img/Image-6.png', 'Prototyping items to create a lot if useless things...', '$128.99', '', 'Showcasing onHovered state', '4.87')
+                    .border
+                        +product('assets/img/Image-6.png', 'Prototyping items to create a lot if useless things...', '$128.99', '', 'Showcasing onHovered state', '4.87')
                     +product('assets/img/Image-5.png', 'John Von Ebalkin SPRING ', '$13.95', '1258 bids, 359 watchers', '$5.95 for shipping', '4.56')
                     +product('assets/img/Image-4.png', 'Envelope, Stripes, Pencil and etc. Purchase this kit today and feel OKAY', '$9.50', '', 'Eligible for Shipping To Mars or somewhere else', '4.77')
                     +product('assets/img/Image-3.png', 'Professional teadrinking set for every designer and developer', '$128.99', '', 'Eligible for nothing :(', '4.05')
                     +product('assets/img/Image-2.png', 'One string Bonsai description', '$11.68', 'Wordwide shitting available', 'Buyers protection possible!', '4.99')
-                    +product('assets/img/Image-1.png', 'Simply best item in town to shine bright with your Nine Inch Nails', '$1.25', '', 'Eligible for Shipping To Mars or somewhere else', '4.77')
+                    .deal
+                        +product('assets/img/Image-1.png', 'Simply best item in town to shine bright with your Nine Inch Nails', '$1.25', '', 'Eligible for Shipping To Mars or somewhere else', '4.77')
                     +product('assets/img/Image.png', 'KISTOCHKI & KRASIBO. Top cosmetics brand from Chelyabinsk is here!', '$23.25', '1258 bids, 359 watchers', '$5.95 for shipping', '4.56')
 
 
